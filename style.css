@@ -20,6 +20,13 @@
   margin-bottom: 4px;
 }
 
+.grid > div {
+  padding: 6px 8px;
+  border: 1px solid #555;
+  text-align: center;
+}
+
+
 .cell {
   padding: 6px 8px;
   border: 1px solid #555;
@@ -76,18 +83,14 @@ body {
   cursor: pointer;
 }
 
-#grid {
+#guessGrid {
   display: flex;
   flex-direction: column;
   gap: 6px;
   width: 100%;
 }
 
-.row div {
-  border: 1px solid #444;
-  padding: 6px;
-  text-align: center;
-}
+
 
 .header div {
   font-weight: bold;
