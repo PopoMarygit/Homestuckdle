@@ -3,22 +3,27 @@
   font-weight: bold;
 }
 
+:root {
+  --columns:
+    180px
+    100px
+    90px
+    90px
+    90px
+    160px
+    120px
+    90px
+    90px
+    140px;
+}
+
 .grid {
   display: grid;
-  grid-template-columns:
-    180px  /* Name */
-    100px  /* Species */
-    90px   /* Blood */
-    90px   /* Class */
-    90px   /* Aspect */
-    180px  /* Handle */
-    110px   /* Universe */
-    90px   /* God Tier */
-    90px   /* Status */
-    140px; /* Introduced */
+  grid-template-columns: var(--columns);
   gap: 4px;
-  margin-bottom: 4px;
+  width: 100%;
 }
+
 
 #guessGrid {
   width: 100%;
