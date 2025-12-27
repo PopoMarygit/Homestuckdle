@@ -1,94 +1,37 @@
+// TEMP TEST DATA
 const characters = [
-  {
-    id: "john_egbert",
-    name: "John Egbert",
-    species: "human",
-    blood: "red",
-    class: "Heir",
-    aspect: "Breath",
-    pesterhandle: "ectoBiologist",
-    universe: "b1",
-    godTierStatus: "god",
-    aliveStatus: "alive",
-    introduced: { series: "homestuck", entry: "Act 1" }
-  },
-  {
-    id: "karkat_vantas",
-    name: "Karkat Vantas",
-    species: "troll",
-    blood: "mutant_red",
-    class: "Knight",
-    aspect: "Blood",
-    pesterhandle: "carcinoGeneticist",
-    universe: "b1",
-    godTierStatus: "god",
-    aliveStatus: "dead",
-    introduced: { series: "homestuck", entry: "Act 5 Act 2" }
-  }
+  { name: "John Egbert", species: "human" },
+  { name: "Karkat Vantas", species: "troll" },
+  { name: "Rose Lalonde", species: "human" }
 ];
 
-const input = document.getElementById("guessInput");
-const datalist = document.getElementById("characterList");
-const button = document.getElementById("guessButton");
-const grid = document.getElementById("grid");
-
-// Pick daily answer (TEMP: fixed for testing)
+// Pick a fixed answer for now
 const answer = characters[1]; // Karkat
 
-input.addEventListener("input", () => {
-  datalist.innerHTML = "";
-
-  if (input.value.length === 0) return;
-
-  characters.forEach(c => {
-    if (c.name.toLowerCase().includes(input.value.toLowerCase())) {
-      const option = document.createElement("option");
-      option.value = c.name;
-      datalist.appendChild(option);
-    }
-  });
-});
-
-button.addEventListener("click", submitGuess);
-
-input.addEventListener("keydown", e => {
-  if (e.key === "Enter") submitGuess();
-});
-
 const input = document.getElementById("guessInput");
-const datalist = document.getElementById("characterList");
 const button = document.getElementById("guessButton");
 const grid = document.getElementById("grid");
+const datalist = document.getElementById("characterList");
 
-// Pick daily answer (TEMP: fixed for testing)
-const answer = characters[1]; // Karkat
+// Populate datalist
+characters.forEach(c => {
+  const option = document.createElement("option");
+  option.value = c.name;
+  datalist.appendChild(option);
+});
 
+// Only show datalist when typing
 input.addEventListener("input", () => {
-  datalist.innerHTML = "";
-
-  if (input.value.length === 0) return;
-
-  characters.forEach(c => {
-    if (c.name.toLowerCase().includes(input.value.toLowerCase())) {
-      const option = document.createElement("option");
-      option.value = c.name;
-      datalist.appendChild(option);
-    }
-  });
+  input.setAttribute("list", input.value.length ? "characterList" : "");
 });
 
-button.addEventListener("click", submitGuess);
-
-input.addEventListener("keydown", e => {
-  if (e.key === "Enter") submitGuess();
-});
-
-function submitGuess() {
-  const name = input.value.trim().toLowerCase();
-  if (!name) return;
+// Guess handling
+function makeGuess() {
+  const value = input.value.trim();
+  if (!value) return;
 
   const guess = characters.find(
-    c => c.name.toLowerCase() === name
+    c => c.name.toLowerCase() === value.toLowerCase()
   );
 
   if (!guess) {
@@ -96,39 +39,27 @@ function submitGuess() {
     return;
   }
 
-  renderGuess(guess);
-  input.value = "";
-}
-
-const TRAITS = [
-  "name",
-  "species",
-  "blood",
-  "class",
-  "aspect",
-  "pesterhandle",
-  "universe",
-  "godTierStatus",
-  "aliveStatus"
-];
-
-function renderGuess(guess) {
   const row = document.createElement("div");
   row.className = "row";
 
-  TRAITS.forEach(trait => {
-    const cell = document.createElement("div");
-    cell.className = "cell";
-    cell.textContent = guess[trait] ?? "—";
+  const nameCell = document.createElement("div");
+  nameCell.textContent = guess.name;
+  nameCell.className = "correct";
 
-    if (guess[trait] === answer[trait]) {
-      cell.classList.add("correct");
-    } else {
-      cell.classList.add("wrong");
-    }
+  const speciesCell = document.createElement("div");
+  speciesCell.textContent = guess.species;
+  speciesCell.className =
+    guess.species === answer.species ? "correct" : "wrong";
 
-    row.appendChild(cell);
-  });
-
+  row.appendChild(nameCell);
+  row.appendChild(speciesCell);
   grid.appendChild(row);
+
+  input.value = "";
+  input.removeAttribute("list");
 }
+
+button.addEventListener("click", makeGuess);
+input.addEventListener("keydown", e => {
+  if (e.key === "Enter") makeGuess();
+});
