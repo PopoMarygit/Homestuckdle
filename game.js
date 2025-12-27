@@ -66,12 +66,17 @@ function pickDailyAnswer() {
   const today = getESTDateString();
   const recentIds = getRecentAnswers().map(r => r.id);
 
-  const pool = characters.filter(c => !recentIds.includes(c.id));
+  let pool = characters.filter(c => !recentIds.includes(c.id));
 
-  const seed =
-    today.split("-").reduce((a, b) => a + Number(b), 0);
+  // 🔒 SAFETY: if pool is empty, reset history
+  if (pool.length === 0) {
+    localStorage.removeItem("recentAnswers");
+    pool = [...characters];
+  }
 
+  const seed = today.split("-").reduce((a, b) => a + Number(b), 0);
   const index = seed % pool.length;
+
   return pool[index];
 }
 
@@ -305,7 +310,13 @@ async function initGame() {
     setStoredDailyAnswer(answer.id);
     saveAnswer(answer.id);
   }
+  
+if (!answer) {
+  console.error("No daily answer could be selected.");
+  return;
+}
 
+  
   setupDatalist();
   setupInputHandlers();
 }
