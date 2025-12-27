@@ -2,6 +2,21 @@
 // PLACEHOLDER CHARACTER DATA
 // ----------------------------
 
+function getStoredDailyAnswer() {
+  return JSON.parse(localStorage.getItem("dailyAnswer") || "null");
+}
+
+function setStoredDailyAnswer(id) {
+  localStorage.setItem(
+    "dailyAnswer",
+    JSON.stringify({
+      date: getESTDateString(),
+      id
+    })
+  );
+}
+
+
 let characters = [];
 let answer = null;
 let guesses = [];
@@ -278,21 +293,23 @@ const traits = [
 async function initGame() {
   await loadCharacters();
 
-  answer = pickDailyAnswer();
-  saveAnswer(answer.id);
+  const today = getESTDateString();
+  const stored = getStoredDailyAnswer();
 
-const yesterday = getYesterdaysCharacter();
-const yesterdayEl = document.getElementById("yesterday");
-
-if (yesterday && yesterdayEl) {
-  yesterdayEl.textContent = `Yesterday: ${yesterday.name}`;
-}
+  if (stored && stored.date === today) {
+    // Reuse today's answer
+    answer = characters.find(c => c.id === stored.id);
+  } else {
+    // Pick a new one for today
+    answer = pickDailyAnswer();
+    setStoredDailyAnswer(answer.id);
+    saveAnswer(answer.id);
+  }
 
   setupDatalist();
   setupInputHandlers();
 }
 
-initGame();
 
 
 
