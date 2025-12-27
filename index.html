@@ -1,48 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Homestuckdle</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
 <body>
-  <div id="app">
-
+  <main id="app">
     <h1 id="logo">HOMESTUCKDLE</h1>
 
-    <!-- Guess input -->
-    <div id="input-area">
+    <div id="guess-area">
       <input
         id="guessInput"
-        type="text"
+        list="characterList"
         placeholder="Type a character name..."
         autocomplete="off"
       />
+      <datalist id="characterList"></datalist>
       <button id="guessButton">Guess</button>
-
-      <ul id="autocomplete"></ul>
     </div>
 
-    <!-- Trait headers -->
-    <div id="traits" class="row headers">
-      <div>Name</div>
-      <div>Species</div>
-      <div>Blood</div>
-      <div>Class</div>
-      <div>Aspect</div>
-      <div>Universe</div>
-      <div>Alive</div>
-    </div>
-
-    <!-- Guess rows go here -->
     <div id="grid"></div>
 
-    <footer>
+    <footer id="footer">
       <small>Homestuck © Andrew Hussie</small>
     </footer>
-
-  </div>
+  </main>
 
   <script src="game.js"></script>
 </body>
-</html>
