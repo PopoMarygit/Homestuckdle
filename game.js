@@ -136,6 +136,7 @@ const bloodOrder = [
 
 const noPartialBloods = [
   "Red",           // humans, carapacians, karkat, caliborn
+  "Yellow",           // Sprites
   "Bright Lime"    // Calliope
 ];
 
