@@ -251,7 +251,6 @@ const traits = [
 // ----------------------------
 // INIT
 // ----------------------------
-
 async function initGame() {
   await loadCharacters();
 
@@ -264,38 +263,11 @@ async function initGame() {
 
 initGame();
 
+
 // ----------------------------
 // SETUP FUNCTIONS
 // ----------------------------
 
-function setupDatalist() {
-  const input = document.getElementById("guessInput");
-  const list = document.getElementById("characterList");
-
-  input.addEventListener("input", () => {
-    const value = input.value.toLowerCase();
-    list.innerHTML = "";
-
-    if (!value) return;
-
-    characters
-      .filter(c => c.name.toLowerCase().startsWith(value))
-      .forEach(c => {
-        const opt = document.createElement("option");
-        opt.value = c.name;
-        list.appendChild(opt);
-      });
-  });
-}
-
-
-function setupInputHandlers() {
-  document.getElementById("guessButton").addEventListener("click", submitGuess);
-
-  document.getElementById("guessInput").addEventListener("keydown", e => {
-    if (e.key === "Enter") submitGuess();
-  });
-}
 
 // ----------------------------
 // GUESSING
