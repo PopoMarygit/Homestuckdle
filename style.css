@@ -5,31 +5,17 @@
 
 :root {
   --columns:
-    2fr   /* Name */
-    1fr   /* Species */
-    1fr   /* Blood */
-    1fr   /* Class */
-    1fr   /* Aspect */
-    2fr   /* Handle */
-    1fr   /* Universe */
-    1fr   /* God Tier */
-    1fr   /* Status */
-    2fr;  /* Introduced */
+    2fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr 2fr;
 }
 
 
-#grid-wrapper {
-  width: 100%;
-}
 
 .grid {
   display: grid;
   grid-template-columns: var(--columns);
   gap: 4px;
   width: 100%;
-  box-sizing: border-box;
 }
-
 
 
 
@@ -102,11 +88,10 @@ body {
 
 
 #guessGrid {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  display: grid;
+  row-gap: 6px;
 }
+
 
 
 
