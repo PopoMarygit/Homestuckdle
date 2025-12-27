@@ -429,3 +429,5 @@ function makeCell(text, cls) {
   cell.textContent = text ?? "—";
   return cell;
 }
+
+initGame();
