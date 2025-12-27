@@ -95,20 +95,13 @@ const universeOrder = [
   "A2"
 ];
 
-function compareBlood(guess, answer) {
+function compareUniverse(guess, answer) {
   if (guess === answer) {
     return { class: "correct", text: guess };
   }
 
-  if (
-    noPartialBloods.includes(guess) ||
-    noPartialBloods.includes(answer)
-  ) {
-    return { class: "wrong", text: guess };
-  }
-
-  const gIndex = bloodOrder.indexOf(guess);
-  const aIndex = bloodOrder.indexOf(answer);
+  const gIndex = universeOrder.indexOf(guess);
+  const aIndex = universeOrder.indexOf(answer);
 
   if (gIndex === -1 || aIndex === -1) {
     return { class: "wrong", text: guess };
@@ -126,6 +119,7 @@ function compareBlood(guess, answer) {
 
   return { class: "wrong", text: guess };
 }
+
 
 const bloodOrder = [
   "Burgundy",
@@ -177,6 +171,7 @@ function compareBlood(guess, answer) {
 
   return { class: "wrong", text: guess };
 }
+
 
 const homestuckActs = [
   "Homestuck Act 1",
