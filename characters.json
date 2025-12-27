@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "John Egbert",
+    "species": "Human",
+    "blood": "Red",
+    "class": "Heir",
+    "aspect": "Breath",
+    "pesterhandle": "ectoBiologist",
+    "universe": "A1",
+    "godTierStatus": "Yes",
+    "aliveStatus": "Alive",
+    "introduced": "Homestuck Act 1"
+  },
+  {
+    "id": 2,
+    "name": "Karkat Vantas",
+    "species": "Troll",
+    "blood": "Red",
+    "class": "Knight",
+    "aspect": "Blood",
+    "pesterhandle": "carcinoGeneticist",
+    "universe": "B2",
+    "godTierStatus": "Yes",
+    "aliveStatus": "Alive",
+    "introduced": "Homestuck Intermission"
+  }
+]
