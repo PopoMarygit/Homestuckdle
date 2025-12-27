@@ -38,7 +38,7 @@ const characters = [
 let answer = characters[Math.floor(Math.random() * characters.length)];
 let guesses = [];
 
-const TRAITS = [
+const traits = [
   "species",
   "blood",
   "class",
@@ -49,6 +49,7 @@ const TRAITS = [
   "aliveStatus",
   "introduced"
 ];
+
 
 // ----------------------------
 // INIT
