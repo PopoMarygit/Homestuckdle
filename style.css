@@ -20,6 +20,10 @@
   margin-bottom: 4px;
 }
 
+#guessGrid {
+  width: 100%;
+}
+
 .grid > div {
   padding: 6px 8px;
   border: 1px solid #555;
