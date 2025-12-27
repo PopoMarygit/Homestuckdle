@@ -2,34 +2,77 @@
 // PLACEHOLDER CHARACTER DATA
 // ----------------------------
 
-const characters = [
-  {
-    id: 1,
-    name: "John Egbert",
-    species: "Human",
-    blood: "Red",
-    class: "Heir",
-    aspect: "Breath",
-    pesterhandle: "ectoBiologist",
-    universe: "A1",
-    godTierStatus: "Yes",
-    aliveStatus: "Alive",
-    introduced: "Homestuck Act 1"
-  },
-  {
-    id: 2,
-    name: "Karkat Vantas",
-    species: "Troll",
-    blood: "Red",
-    class: "Knight",
-    aspect: "Blood",
-    pesterhandle: "carcinoGeneticist",
-    universe: "B2",
-    godTierStatus: "Yes",
-    aliveStatus: "Alive",
-    introduced: "Homestuck Intermission"
-  }
-];
+let characters = [];
+let answer = null;
+let guesses = [];
+
+function showWinScreen() {
+  document.getElementById("input-area").style.display = "none";
+
+  const win = document.getElementById("win");
+  win.style.display = "block";
+
+  startCountdown();
+}
+
+
+async function loadCharacters() {
+  const res = await fetch("characters.json");
+  characters = await res.json();
+}
+
+function getESTDateString(date = new Date()) {
+  const est = new Date(
+    date.toLocaleString("en-US", { timeZone: "America/New_York" })
+  );
+  return est.toISOString().slice(0, 10); // YYYY-MM-DD
+}
+
+const NO_REPEAT_DAYS = 30;
+
+function getRecentAnswers() {
+  return JSON.parse(localStorage.getItem("recentAnswers") || "[]");
+}
+
+function saveAnswer(id) {
+  const today = getESTDateString();
+  let recent = getRecentAnswers();
+
+  recent.push({ id, date: today });
+
+  recent = recent.filter(
+    r => (new Date(today) - new Date(r.date)) / 86400000 < NO_REPEAT_DAYS
+  );
+
+  localStorage.setItem("recentAnswers", JSON.stringify(recent));
+}
+
+function pickDailyAnswer() {
+  const today = getESTDateString();
+  const recentIds = getRecentAnswers().map(r => r.id);
+
+  const pool = characters.filter(c => !recentIds.includes(c.id));
+
+  const seed =
+    today.split("-").reduce((a, b) => a + Number(b), 0);
+
+  const index = seed % pool.length;
+  return pool[index];
+}
+
+function getYesterdaysCharacter() {
+  const recent = getRecentAnswers();
+  return recent.length
+    ? characters.find(c => c.id === recent.at(-1).id)
+    : null;
+}
+
+const yesterday = getYesterdaysCharacter();
+if (yesterday) {
+  document.getElementById("yesterday").textContent =
+    `Yesterday: ${yesterday.name}`;
+}
+
 
 const universeOrder = [
   "B1",
@@ -162,6 +205,27 @@ function compareIntroduced(guess, answer) {
 }
 
 
+function startCountdown() {
+  const timer = document.getElementById("countdown");
+
+  setInterval(() => {
+    const now = new Date();
+    const estNow = new Date(
+      now.toLocaleString("en-US", { timeZone: "America/New_York" })
+    );
+
+    const next = new Date(estNow);
+    next.setHours(24, 0, 0, 0);
+
+    const diff = next - estNow;
+
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+
+    timer.textContent = `${h}h ${m}m ${s}s`;
+  }, 1000);
+}
 
 
 // ----------------------------
@@ -188,8 +252,17 @@ const traits = [
 // INIT
 // ----------------------------
 
-setupDatalist();
-setupInputHandlers();
+async function initGame() {
+  await loadCharacters();
+
+  answer = pickDailyAnswer();
+  saveAnswer(answer.id);
+
+  setupDatalist();
+  setupInputHandlers();
+}
+
+initGame();
 
 // ----------------------------
 // SETUP FUNCTIONS
@@ -251,6 +324,11 @@ function submitGuess() {
   guesses.push(guessed);
   renderGuessRow(guessed);
   input.value = "";
+
+  if (guessed.id === answer.id) {
+  showWinScreen();
+}
+
 }
 
 // ----------------------------
