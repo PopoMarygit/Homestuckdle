@@ -1,4 +1,4 @@
-// TEMP TEST DATA — replace later with real JSON loading
+// 🔹 TEMP DATA (replace later)
 const characters = [
   {
     id: "john_egbert",
@@ -8,8 +8,7 @@ const characters = [
     class: "Heir",
     aspect: "Breath",
     universe: "b1",
-    godTierStatus: "god",
-    aliveStatus: "alive"
+    alive: "alive"
   },
   {
     id: "karkat_vantas",
@@ -19,58 +18,65 @@ const characters = [
     class: "Knight",
     aspect: "Blood",
     universe: "b1",
-    godTierStatus: "god",
-    aliveStatus: "dead"
+    alive: "dead"
   }
 ];
 
-// Pick first character for testing
+// Pick answer
 const answer = characters[0];
-const grid = document.getElementById("grid");
+
 const input = document.getElementById("guessInput");
 const button = document.getElementById("guessButton");
-const datalist = document.getElementById("characterList");
+const grid = document.getElementById("grid");
+const autocomplete = document.getElementById("autocomplete");
 
-// Populate datalist
-characters.forEach(c => {
-  const opt = document.createElement("option");
-  opt.value = c.name;
-  datalist.appendChild(opt);
-});
-
-// Hide datalist until typing
+// 🔍 Autocomplete
 input.addEventListener("input", () => {
-  input.setAttribute("list", input.value.length ? "characterList" : "");
-});
+  const value = input.value.toLowerCase();
+  autocomplete.innerHTML = "";
 
-// Guess handler
-function submitGuess() {
-  const value = input.value.trim();
-  if (!value) return;
-
-  const guess = characters.find(
-    c => c.name.toLowerCase() === value.toLowerCase()
-  );
-
-  if (!guess) {
-    alert("Character not found.");
+  if (!value) {
+    autocomplete.style.display = "none";
     return;
   }
 
-  addRow(guess);
-  input.value = "";
-}
+  const matches = characters.filter(c =>
+    c.name.toLowerCase().includes(value)
+  );
 
-// Button + Enter key
+  matches.forEach(c => {
+    const li = document.createElement("li");
+    li.textContent = c.name;
+    li.onclick = () => {
+      input.value = c.name;
+      autocomplete.style.display = "none";
+    };
+    autocomplete.appendChild(li);
+  });
+
+  autocomplete.style.display = matches.length ? "block" : "none";
+});
+
+// 🎯 Guess submission
 button.addEventListener("click", submitGuess);
 input.addEventListener("keydown", e => {
   if (e.key === "Enter") submitGuess();
 });
 
-// Create grid row
-function addRow(guess) {
+function submitGuess() {
+  const name = input.value.trim();
+  const guess = characters.find(c => c.name === name);
+  if (!guess) return;
+
+  renderRow(guess);
+  input.value = "";
+  autocomplete.style.display = "none";
+}
+
+// 🧱 Render a row
+function renderRow(guess) {
   const row = document.createElement("div");
-  row.className = "grid-row";
+  row.className = "row";
 
   addCell(row, guess.name, guess.name === answer.name);
   addCell(row, guess.species, guess.species === answer.species);
@@ -78,15 +84,14 @@ function addRow(guess) {
   addCell(row, guess.class, guess.class === answer.class);
   addCell(row, guess.aspect, guess.aspect === answer.aspect);
   addCell(row, guess.universe, guess.universe === answer.universe);
-  addCell(row, guess.godTierStatus, guess.godTierStatus === answer.godTierStatus);
-  addCell(row, guess.aliveStatus, guess.aliveStatus === answer.aliveStatus);
+  addCell(row, guess.alive, guess.alive === answer.alive);
 
   grid.appendChild(row);
 }
 
 function addCell(row, text, correct) {
   const cell = document.createElement("div");
-  cell.className = "grid-cell " + (correct ? "correct" : "wrong");
   cell.textContent = text ?? "—";
+  cell.className = correct ? "correct" : "wrong";
   row.appendChild(cell);
 }
