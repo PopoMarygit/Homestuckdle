@@ -11,7 +11,7 @@ const characters = [
     class: "Heir",
     aspect: "Breath",
     pesterhandle: "ectoBiologist",
-    universe: "B1",
+    universe: "A1",
     godTierStatus: "Yes",
     aliveStatus: "Alive",
     introduced: "Homestuck Act 1"
@@ -24,7 +24,7 @@ const characters = [
     class: "Knight",
     aspect: "Blood",
     pesterhandle: "carcinoGeneticist",
-    universe: "B1",
+    universe: "B2",
     godTierStatus: "Yes",
     aliveStatus: "Alive",
     introduced: "Homestuck Act 2"
