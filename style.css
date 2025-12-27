@@ -1,0 +1,135 @@
+/* ---------- Base ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #111;
+  color: #eee;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+}
+
+h1 {
+  margin: 0;
+  letter-spacing: 0.1em;
+}
+
+.subtitle {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+main {
+  padding: 1rem;
+  max-width: 100%;
+}
+
+/* ---------- Input ---------- */
+
+.input-section {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 260px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ---------- Grid ---------- */
+
+.grid-wrapper {
+  overflow-x: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns:
+    180px  /* Name */
+    100px  /* Species */
+    100px  /* Blood */
+    90px   /* Class */
+    90px   /* Aspect */
+    160px  /* Handle */
+    80px   /* Universe */
+    90px   /* God Tier */
+    90px   /* Status */
+    140px; /* Introduced */
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.header {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.grid > div {
+  padding: 6px;
+  text-align: center;
+  border: 1px solid #333;
+  background: #222;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Result States ---------- */
+
+.correct {
+  background: #538d4e;
+  color: #fff;
+}
+
+.wrong {
+  background: #3a3a3c;
+  color: #aaa;
+}
+
+.higher::after {
+  content: " ▲";
+}
+
+.lower::after {
+  content: " ▼";
+}
+
+.unknown {
+  background: #665c00;
+  color: #fff;
+}
+
+/* ---------- Message ---------- */
+
+.message {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  text-align: center;
+  opacity: 0.5;
+  font-size: 0.75rem;
+  padding: 1rem;
+}
