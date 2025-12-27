@@ -1,65 +1,150 @@
-// TEMP TEST DATA
+// ----------------------------
+// PLACEHOLDER CHARACTER DATA
+// ----------------------------
+
 const characters = [
-  { name: "John Egbert", species: "human" },
-  { name: "Karkat Vantas", species: "troll" },
-  { name: "Rose Lalonde", species: "human" }
+  {
+    id: 1,
+    name: "John Egbert",
+    species: "Human",
+    blood: "Red",
+    class: "Heir",
+    aspect: "Breath",
+    pesterhandle: "ectoBiologist",
+    universe: "B1",
+    godTierStatus: "Yes",
+    aliveStatus: "Alive",
+    introduced: "Homestuck Act 1"
+  },
+  {
+    id: 2,
+    name: "Karkat Vantas",
+    species: "Troll",
+    blood: "Red",
+    class: "Knight",
+    aspect: "Blood",
+    pesterhandle: "carcinoGeneticist",
+    universe: "B1",
+    godTierStatus: "Yes",
+    aliveStatus: "Alive",
+    introduced: "Homestuck Act 2"
+  }
 ];
 
-// Pick a fixed answer for now
-const answer = characters[1]; // Karkat
+// ----------------------------
+// GAME STATE
+// ----------------------------
 
-const input = document.getElementById("guessInput");
-const button = document.getElementById("guessButton");
-const grid = document.getElementById("grid");
-const datalist = document.getElementById("characterList");
+let answer = characters[Math.floor(Math.random() * characters.length)];
+let guesses = [];
 
-// Populate datalist
-characters.forEach(c => {
-  const option = document.createElement("option");
-  option.value = c.name;
-  datalist.appendChild(option);
-});
+const TRAITS = [
+  "species",
+  "blood",
+  "class",
+  "aspect",
+  "pesterhandle",
+  "universe",
+  "godTierStatus",
+  "aliveStatus",
+  "introduced"
+];
 
-// Only show datalist when typing
-input.addEventListener("input", () => {
-  input.setAttribute("list", input.value.length ? "characterList" : "");
-});
+// ----------------------------
+// INIT
+// ----------------------------
 
-// Guess handling
-function makeGuess() {
-  const value = input.value.trim();
-  if (!value) return;
+setupDatalist();
+setupInputHandlers();
 
-  const guess = characters.find(
-    c => c.name.toLowerCase() === value.toLowerCase()
+// ----------------------------
+// SETUP FUNCTIONS
+// ----------------------------
+
+function setupDatalist() {
+  const list = document.getElementById("characterList");
+  list.innerHTML = "";
+
+  characters.forEach(c => {
+    const opt = document.createElement("option");
+    opt.value = c.name;
+    list.appendChild(opt);
+  });
+}
+
+function setupInputHandlers() {
+  document.getElementById("guessButton").addEventListener("click", submitGuess);
+
+  document.getElementById("guessInput").addEventListener("keydown", e => {
+    if (e.key === "Enter") submitGuess();
+  });
+}
+
+// ----------------------------
+// GUESSING
+// ----------------------------
+
+function submitGuess() {
+  const input = document.getElementById("guessInput");
+  const name = input.value.trim();
+
+  if (!name) return;
+
+  const guessed = characters.find(
+    c => c.name.toLowerCase() === name.toLowerCase()
   );
 
-  if (!guess) {
-    alert("Character not found");
+  if (!guessed) {
+    alert("Character not found.");
     return;
   }
 
-  const row = document.createElement("div");
-  row.className = "row";
+  if (guesses.some(g => g.id === guessed.id)) {
+    alert("Already guessed.");
+    return;
+  }
 
-  const nameCell = document.createElement("div");
-  nameCell.textContent = guess.name;
-  nameCell.className = "correct";
-
-  const speciesCell = document.createElement("div");
-  speciesCell.textContent = guess.species;
-  speciesCell.className =
-    guess.species === answer.species ? "correct" : "wrong";
-
-  row.appendChild(nameCell);
-  row.appendChild(speciesCell);
-  grid.appendChild(row);
-
+  guesses.push(guessed);
+  renderGuessRow(guessed);
   input.value = "";
-  input.removeAttribute("list");
 }
 
-button.addEventListener("click", makeGuess);
-input.addEventListener("keydown", e => {
-  if (e.key === "Enter") makeGuess();
-});
+// ----------------------------
+// RENDERING
+// ----------------------------
+
+function renderGuessRow(guess) {
+  const grid = document.getElementById("guessGrid");
+
+  const row = document.createElement("div");
+  row.className = "grid";
+
+  // NAME CELL
+  row.appendChild(
+    makeCell(
+      guess.name,
+      guess.id === answer.id ? "correct" : "wrong"
+    )
+  );
+
+  // TRAIT CELLS
+  TRAITS.forEach(trait => {
+    const cls =
+      guess[trait] === answer[trait] ? "correct" : "wrong";
+
+    row.appendChild(makeCell(guess[trait], cls));
+  });
+
+  grid.appendChild(row);
+}
+
+// ----------------------------
+// HELPERS
+// ----------------------------
+
+function makeCell(text, cls) {
+  const cell = document.createElement("div");
+  cell.className = cls;
+  cell.textContent = text ?? "—";
+  return cell;
+}
