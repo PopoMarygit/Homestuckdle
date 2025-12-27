@@ -95,51 +95,6 @@ const universeOrder = [
   "A2"
 ];
 
-function compareUniverse(guess, answer) {
-  if (guess === answer) {
-    return { class: "correct", text: guess };
-  }
-
-  const gIndex = universeOrder.indexOf(guess);
-  const aIndex = universeOrder.indexOf(answer);
-
-  if (gIndex === -1 || aIndex === -1) {
-    return { class: "wrong", text: guess };
-  }
-
-  if (gIndex < aIndex) {
-    return { class: "partial", text: `${guess} ↑` };
-  }
-
-  if (gIndex > aIndex) {
-    return { class: "partial", text: `${guess} ↓` };
-  }
-
-  return { class: "wrong", text: guess };
-}
-
-
-const bloodOrder = [
-  "Burgundy",
-  "Bronze",
-  "Gold",
-  "Lime",
-  "Olive",
-  "Jade",
-  "Teal",
-  "Cerulean",
-  "Indigo",
-  "Purple",
-  "Violet",
-  "Fuchsia"
-];
-
-const noPartialBloods = [
-  "Red",           // humans, carapacians, karkat, caliborn
-  "Yellow",           // Sprites
-  "Bright Lime"    // Calliope
-];
-
 function compareBlood(guess, answer) {
   if (guess === answer) {
     return { class: "correct", text: guess };
@@ -159,11 +114,64 @@ function compareBlood(guess, answer) {
     return { class: "wrong", text: guess };
   }
 
-  if (gIndex < aIndex) {
+  const diff = gIndex - aIndex;
+
+  if (diff === -1) {
     return { class: "partial", text: `${guess} ↑` };
   }
 
-  if (gIndex > aIndex) {
+  if (diff === 1) {
+    return { class: "partial", text: `${guess} ↓` };
+  }
+
+  return { class: "wrong", text: guess };
+}
+
+const bloodOrder = [
+  "Burgundy",
+  "Bronze",
+  "Gold",
+  "Lime",
+  "Olive",
+  "Jade",
+  "Teal",
+  "Cerulean",
+  "Indigo",
+  "Purple",
+  "Violet",
+  "Fuchsia"
+];
+
+function compareBlood(guess, answer) {
+  if (guess === answer) {
+    return { class: "correct", text: guess };
+  }
+
+  // No partials for these blood types
+  if (
+    noPartialBloods.includes(guess) ||
+    noPartialBloods.includes(answer)
+  ) {
+    return { class: "wrong", text: guess };
+  }
+
+  const gIndex = bloodOrder.indexOf(guess);
+  const aIndex = bloodOrder.indexOf(answer);
+
+  // If either blood isn't in the spectrum list
+  if (gIndex === -1 || aIndex === -1) {
+    return { class: "wrong", text: guess };
+  }
+
+  const diff = gIndex - aIndex;
+
+  // Guess is exactly one step BELOW the answer
+  if (diff === -1) {
+    return { class: "partial", text: `${guess} ↑` };
+  }
+
+  // Guess is exactly one step ABOVE the answer
+  if (diff === 1) {
     return { class: "partial", text: `${guess} ↓` };
   }
 
@@ -198,7 +206,7 @@ function compareIntroduced(guess, answer) {
   const guessIsHW = hiveswapActs.includes(guess);
   const answerIsHW = hiveswapActs.includes(answer);
 
-  // Do NOT allow partials across Homestuck ↔ Hiveswap
+  // No cross-series partials
   if (guessIsHS !== answerIsHS || guessIsHW !== answerIsHW) {
     return { class: "wrong", text: guess };
   }
@@ -208,17 +216,22 @@ function compareIntroduced(guess, answer) {
   const gIndex = list.indexOf(guess);
   const aIndex = list.indexOf(answer);
 
-  if (gIndex < aIndex) {
+  if (gIndex === -1 || aIndex === -1) {
+    return { class: "wrong", text: guess };
+  }
+
+  const diff = gIndex - aIndex;
+
+  if (diff === -1) {
     return { class: "partial", text: `${guess} ↑` };
   }
 
-  if (gIndex > aIndex) {
+  if (diff === 1) {
     return { class: "partial", text: `${guess} ↓` };
   }
 
   return { class: "wrong", text: guess };
 }
-
 
 function startCountdown() {
   const timer = document.getElementById("countdown");
