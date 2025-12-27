@@ -114,29 +114,44 @@ function submitGuess() {
 // ----------------------------
 
 function renderGuessRow(guess) {
-  const grid = document.getElementById("guessGrid");
+  const guessGrid = document.getElementById("guessGrid");
 
+  // CREATE ROW
   const row = document.createElement("div");
-  row.className = "grid";
+  row.classList.add("grid");
 
-  // NAME CELL
-  row.appendChild(
-    makeCell(
-      guess.name,
-      guess.id === answer.id ? "correct" : "wrong"
-    )
-  );
+  // NAME
+  const nameCell = document.createElement("div");
+  nameCell.textContent = guess.name;
+  nameCell.className =
+    guess.id === answer.id ? "correct" : "wrong";
+  row.appendChild(nameCell);
 
-  // TRAIT CELLS
-  TRAITS.forEach(trait => {
-    const cls =
+  // TRAITS
+  const traits = [
+    "species",
+    "blood",
+    "class",
+    "aspect",
+    "pesterhandle",
+    "universe",
+    "godTierStatus",
+    "aliveStatus",
+    "introduced"
+  ];
+
+  traits.forEach(trait => {
+    const cell = document.createElement("div");
+    cell.textContent = guess[trait] ?? "—";
+    cell.className =
       guess[trait] === answer[trait] ? "correct" : "wrong";
-
-    row.appendChild(makeCell(guess[trait], cls));
+    row.appendChild(cell);
   });
 
-  grid.appendChild(row);
+  // APPEND ROW TO GRID
+  guessGrid.appendChild(row);
 }
+
 
 // ----------------------------
 // HELPERS
