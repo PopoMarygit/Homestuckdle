@@ -27,7 +27,7 @@ const characters = [
     universe: "B2",
     godTierStatus: "Yes",
     aliveStatus: "Alive",
-    introduced: "Homestuck Act 2"
+    introduced: "Homestuck Intermission"
   }
 ];
 
