@@ -3,6 +3,23 @@
   font-weight: bold;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns:
+    180px  /* Name */
+    100px  /* Species */
+    90px   /* Blood */
+    90px   /* Class */
+    90px   /* Aspect */
+    160px  /* Handle */
+    80px   /* Universe */
+    90px   /* God Tier */
+    90px   /* Status */
+    140px; /* Introduced */
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
 .row {
   display: grid;
   grid-template-columns: repeat(10, auto);
