@@ -3,68 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <title>Homestuckdle</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Basic metadata -->
-  <meta name="description" content="A daily Homestuck character guessing game." />
-
-  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <main id="app">
 
-    <header>
-      <h1>Homestuckdle</h1>
-      <p class="subtitle">Guess the Homestuck character of the day.</p>
-    </header>
+  <h1>Homestuckdle</h1>
 
-    <!-- Guess Input -->
-    <section id="input-section">
-      <input
-        type="text"
-        id="guess-input"
-        placeholder="Type a character name..."
-        list="character-list"
-        autocomplete="off"
-      />
-      <button id="guess-button">Guess</button>
+  <div id="game-container">
+    <input
+      id="guessInput"
+      list="characterList"
+      placeholder="Type a character name…"
+      autocomplete="off"
+    />
 
-      <!-- Autocomplete options -->
-      <datalist id="character-list"></datalist>
-    </section>
+    <datalist id="characterList"></datalist>
 
-    <!-- Attribute Headers -->
-    <section id="grid-header" class="grid">
-      <div>Name</div>
-      <div>Species</div>
-      <div>Blood</div>
-      <div>Class</div>
-      <div>Aspect</div>
-      <div>Handle</div>
-      <div>Universe</div>
-      <div>God Tier</div>
-      <div>Status</div>
-      <div>Introduced</div>
-    </section>
+    <div id="grid"></div>
+  </div>
 
-    <!-- Guess Results -->
-    <section id="grid-body"></section>
-
-    <!-- Messages -->
-    <section id="message"></section>
-
-    <!-- Footer -->
-    <footer>
-      <p>
-        Unofficial fan project. Homestuck © Andrew Hussie.
-      </p>
-    </footer>
-
-  </main>
-
-  <!-- Game logic -->
   <script src="game.js"></script>
 </body>
 </html>
