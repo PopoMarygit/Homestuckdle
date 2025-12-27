@@ -281,11 +281,12 @@ async function initGame() {
   answer = pickDailyAnswer();
   saveAnswer(answer.id);
 
-  const yesterday = getYesterdaysCharacter();
-  if (yesterday) {
-    document.getElementById("yesterday").textContent =
-      `Yesterday: ${yesterday.name}`;
-  }
+const yesterday = getYesterdaysCharacter();
+const yesterdayEl = document.getElementById("yesterday");
+
+if (yesterday && yesterdayEl) {
+  yesterdayEl.textContent = `Yesterday: ${yesterday.name}`;
+}
 
   setupDatalist();
   setupInputHandlers();
