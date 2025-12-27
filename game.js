@@ -31,6 +31,115 @@ const characters = [
   }
 ];
 
+const universeOrder = [
+  "B1",
+  "B2",
+  "A1",
+  "A2"
+];
+
+const bloodOrder = [
+  "Burgundy",
+  "Bronze",
+  "Gold",
+  "Lime",
+  "Olive",
+  "Jade",
+  "Teal",
+  "Cerulean",
+  "Indigo",
+  "Purple",
+  "Violet",
+  "Fuchsia"
+];
+
+const noPartialBloods = [
+  "Red",           // humans, carapacians, karkat, caliborn
+  "Bright Lime"    // Calliope
+];
+
+function compareBlood(guess, answer) {
+  if (guess === answer) {
+    return { class: "correct", text: guess };
+  }
+
+  if (
+    noPartialBloods.includes(guess) ||
+    noPartialBloods.includes(answer)
+  ) {
+    return { class: "wrong", text: guess };
+  }
+
+  const gIndex = bloodOrder.indexOf(guess);
+  const aIndex = bloodOrder.indexOf(answer);
+
+  if (gIndex === -1 || aIndex === -1) {
+    return { class: "wrong", text: guess };
+  }
+
+  if (gIndex < aIndex) {
+    return { class: "partial", text: `${guess} ↑` };
+  }
+
+  if (gIndex > aIndex) {
+    return { class: "partial", text: `${guess} ↓` };
+  }
+
+  return { class: "wrong", text: guess };
+}
+
+const homestuckActs = [
+  "Homestuck Act 1",
+  "Homestuck Act 2",
+  "Homestuck Act 3",
+  "Homestuck Intermission",
+  "Homestuck Act 4",
+  "Homestuck Act 5",
+  "Homestuck Act 6",
+];
+
+const hiveswapActs = [
+  "Hiveswap Act 1",
+  "Hiveswap Friendsim",
+  "Hiveswap Act 2",
+  "Hiveswap Act 3"
+];
+
+function compareIntroduced(guess, answer) {
+  if (guess === answer) {
+    return { class: "correct", text: guess };
+  }
+
+  const guessIsHS = homestuckActs.includes(guess);
+  const answerIsHS = homestuckActs.includes(answer);
+
+  const guessIsHW = hiveswapActs.includes(guess);
+  const answerIsHW = hiveswapActs.includes(answer);
+
+  // Do NOT allow partials across Homestuck ↔ Hiveswap
+  if (guessIsHS !== answerIsHS || guessIsHW !== answerIsHW) {
+    return { class: "wrong", text: guess };
+  }
+
+  const list = guessIsHS ? homestuckActs : hiveswapActs;
+
+  const gIndex = list.indexOf(guess);
+  const aIndex = list.indexOf(answer);
+
+  if (gIndex < aIndex) {
+    return { class: "partial", text: `${guess} ↑` };
+  }
+
+  if (gIndex > aIndex) {
+    return { class: "partial", text: `${guess} ↓` };
+  }
+
+  return { class: "wrong", text: guess };
+}
+
+
+
+
 // ----------------------------
 // GAME STATE
 // ----------------------------
@@ -153,9 +262,31 @@ nameCell.className =
 
   traits.forEach(trait => {
     const cell = document.createElement("div");
-    cell.textContent = guess[trait] ?? "—";
-    cell.className =
-  "cell " + (guess[trait] === answer[trait] ? "correct" : "wrong");
+let result;
+
+switch (trait) {
+  case "blood":
+    result = compareBlood(guess.blood, answer.blood);
+    break;
+
+  case "universe":
+    result = compareUniverse(guess.universe, answer.universe);
+    break;
+
+  case "introduced":
+    result = compareIntroduced(guess.introduced, answer.introduced);
+    break;
+
+  default:
+    result =
+      guess[trait] === answer[trait]
+        ? { class: "correct", text: guess[trait] }
+        : { class: "wrong", text: guess[trait] };
+}
+
+cell.textContent = result.text;
+cell.className = "cell " + result.class;
+
 
     row.appendChild(cell);
   });
