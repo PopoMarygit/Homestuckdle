@@ -17,12 +17,20 @@
     140px;
 }
 
+#grid-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
 .grid {
   display: grid;
   grid-template-columns: var(--columns);
   gap: 4px;
-  width: 100%;
+  width: max-content;
+  min-width: 1160px;
+  margin: 0 auto;
 }
+
 
 
 #guessGrid {
@@ -94,7 +102,9 @@ body {
 
 #grid-wrapper {
   width: 100%;
+  overflow-x: auto;
 }
+
 
 #guessGrid {
   width: 100%;
