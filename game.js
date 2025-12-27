@@ -134,8 +134,8 @@ function renderGuessRow(guess) {
   // NAME
   const nameCell = document.createElement("div");
   nameCell.textContent = guess.name;
-  nameCell.className =
-    guess.id === answer.id ? "correct" : "wrong";
+nameCell.className =
+  "cell " + (guess.id === answer.id ? "correct" : "wrong");
   row.appendChild(nameCell);
 
   // TRAITS
@@ -155,7 +155,8 @@ function renderGuessRow(guess) {
     const cell = document.createElement("div");
     cell.textContent = guess[trait] ?? "—";
     cell.className =
-      guess[trait] === answer[trait] ? "correct" : "wrong";
+  "cell " + (guess[trait] === answer[trait] ? "correct" : "wrong");
+
     row.appendChild(cell);
   });
 
