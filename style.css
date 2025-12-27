@@ -1,16 +1,21 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #111;
-  color: white;
+  color: #eee;
 }
 
 #app {
-  min-height: 100vh;
+  width: 100%;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,18 +24,18 @@ body {
 
 #logo {
   margin: 20px 0;
+  letter-spacing: 4px;
 }
 
 #input-area {
-  position: relative;
   display: flex;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 #guessInput {
-  width: 260px;
   padding: 8px;
-  font-size: 16px;
+  width: 260px;
 }
 
 #guessButton {
@@ -38,57 +43,41 @@ body {
   cursor: pointer;
 }
 
-/* Autocomplete dropdown */
-#autocomplete {
-  position: absolute;
-  top: 40px;
-  left: 0;
-  width: 260px;
-  background: #222;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #444;
-  display: none;
-  max-height: 200px;
-  overflow-y: auto;
-  z-index: 10;
+#grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
 }
 
-#autocomplete li {
-  padding: 6px;
-  cursor: pointer;
-}
-
-#autocomplete li:hover {
-  background: #444;
-}
-
-/* Trait grid */
 .row {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  width: 100%;
-  max-width: 900px;
-  margin-top: 10px;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
 }
 
-.headers {
-  font-weight: bold;
-  border-bottom: 2px solid #555;
-}
-
-.row > div {
+.row div {
+  border: 1px solid #444;
   padding: 6px;
   text-align: center;
-  border: 1px solid #333;
 }
 
-/* Feedback colors */
-.correct { background: #2e7d32; }
-.wrong { background: #555; }
+.header div {
+  font-weight: bold;
+  background: #222;
+}
 
-footer {
+.correct {
+  background: #2e7d32;
+}
+
+.wrong {
+  background: #555;
+}
+
+#footer {
   margin-top: auto;
-  opacity: 0.6;
+  padding: 10px;
+  font-size: 12px;
+  opacity: 0.7;
 }
