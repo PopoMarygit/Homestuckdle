@@ -62,15 +62,25 @@ setupInputHandlers();
 // ----------------------------
 
 function setupDatalist() {
+  const input = document.getElementById("guessInput");
   const list = document.getElementById("characterList");
-  list.innerHTML = "";
 
-  characters.forEach(c => {
-    const opt = document.createElement("option");
-    opt.value = c.name;
-    list.appendChild(opt);
+  input.addEventListener("input", () => {
+    const value = input.value.toLowerCase();
+    list.innerHTML = "";
+
+    if (!value) return;
+
+    characters
+      .filter(c => c.name.toLowerCase().startsWith(value))
+      .forEach(c => {
+        const opt = document.createElement("option");
+        opt.value = c.name;
+        list.appendChild(opt);
+      });
   });
 }
+
 
 function setupInputHandlers() {
   document.getElementById("guessButton").addEventListener("click", submitGuess);
