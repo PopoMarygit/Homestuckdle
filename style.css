@@ -1,84 +1,94 @@
 * {
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
   margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
   background: #111;
-  color: #eee;
+  color: white;
 }
 
-.game-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-}
-
-.logo {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin-bottom: 20px;
-}
-
-.guess-area {
+#app {
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#logo {
+  margin: 20px 0;
+}
+
+#input-area {
+  position: relative;
+  display: flex;
   gap: 10px;
-  margin-bottom: 20px;
 }
 
 #guessInput {
   width: 260px;
-  padding: 10px;
-  font-size: 1rem;
+  padding: 8px;
+  font-size: 16px;
 }
 
 #guessButton {
-  padding: 10px 16px;
-  font-size: 1rem;
+  padding: 8px 14px;
   cursor: pointer;
 }
 
-.grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.grid-row {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  gap: 6px;
-  width: 100%;
-}
-
-.grid-cell {
-  padding: 6px;
+/* Autocomplete dropdown */
+#autocomplete {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 260px;
+  background: #222;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   border: 1px solid #444;
-  font-size: 0.75rem;
-  min-height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+#autocomplete li {
+  padding: 6px;
+  cursor: pointer;
+}
+
+#autocomplete li:hover {
+  background: #444;
+}
+
+/* Trait grid */
+.row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+  max-width: 900px;
+  margin-top: 10px;
+}
+
+.headers {
+  font-weight: bold;
+  border-bottom: 2px solid #555;
+}
+
+.row > div {
+  padding: 6px;
+  text-align: center;
+  border: 1px solid #333;
 }
 
 /* Feedback colors */
-.correct { background: #538d4e; }
-.wrong { background: #3a3a3c; }
-.higher::after { content: " ▲"; }
-.lower::after { content: " ▼"; }
+.correct { background: #2e7d32; }
+.wrong { background: #555; }
 
-.footer {
-  margin-top: 30px;
-  font-size: 0.75rem;
-  opacity: 0.5;
+footer {
+  margin-top: auto;
+  opacity: 0.6;
 }
