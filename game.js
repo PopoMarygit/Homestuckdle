@@ -38,6 +38,30 @@ const universeOrder = [
   "A2"
 ];
 
+function compareUniverse(guess, answer) {
+  if (guess === answer) {
+    return { class: "correct", text: guess };
+  }
+
+  const gIndex = universeOrder.indexOf(guess);
+  const aIndex = universeOrder.indexOf(answer);
+
+  if (gIndex === -1 || aIndex === -1) {
+    return { class: "wrong", text: guess };
+  }
+
+  if (gIndex < aIndex) {
+    return { class: "partial", text: `${guess} ↑` };
+  }
+
+  if (gIndex > aIndex) {
+    return { class: "partial", text: `${guess} ↓` };
+  }
+
+  return { class: "wrong", text: guess };
+}
+
+
 const bloodOrder = [
   "Burgundy",
   "Bronze",
