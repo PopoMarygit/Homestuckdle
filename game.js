@@ -136,6 +136,11 @@ const bloodOrder = [
   "Fuchsia"
 ];
 
+const noPartialBloods = [ "Red", // humans, carapacians, karkat, caliborn 
+                         "Yellow", // Sprites 
+                         "Bright Lime" // Calliope 
+ ];
+
 function compareBlood(guess, answer) {
   if (guess === answer) {
     return { class: "correct", text: guess };
