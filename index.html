@@ -1,24 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Homestuckdle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
   <main id="app">
     <h1 id="logo">HOMESTUCKDLE</h1>
 
-    <div id="guess-area">
+    <div id="input-area">
       <input
         id="guessInput"
+        type="text"
+        placeholder="Type a character name…"
         list="characterList"
-        placeholder="Type a character name..."
         autocomplete="off"
       />
-      <datalist id="characterList"></datalist>
       <button id="guessButton">Guess</button>
+
+      <datalist id="characterList"></datalist>
     </div>
 
-    <div id="grid"></div>
-
-    <footer id="footer">
-      <small>Homestuck © Andrew Hussie</small>
-    </footer>
+    <div id="grid">
+      <div class="row header">
+        <div>Name</div>
+        <div>Species</div>
+      </div>
+    </div>
   </main>
+
+  <footer id="footer">
+    Homestuck and related works © Andrew Hussie. Fan project.
+  </footer>
 
   <script src="game.js"></script>
 </body>
+</html>
