@@ -92,7 +92,8 @@ const universeOrder = [
   "B1",
   "B2",
   "A1",
-  "A2"
+  "A2",
+  "C"
 ];
 
 function compareUniverse(guess, answer) {
