@@ -5,8 +5,19 @@
 
 :root {
   --columns:
-    2fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr 2fr;
+    2fr  /* Name */
+    1fr  /* Gender */
+    1fr  /* Species */
+    1fr  /* Blood */
+    1fr  /* Class */
+    1fr  /* Aspect */
+    2fr  /* Pesterhandle */
+    1fr  /* Universe */
+    1fr  /* God Tier */
+    1fr  /* Alive */
+    2fr; /* Introduced */
 }
+
 
 
 
