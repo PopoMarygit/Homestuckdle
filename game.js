@@ -298,11 +298,37 @@ async function initGame() {
     return;
   }
 
-  console.log("Daily answer:", answer.name);
+  // --- CLEAR STALE WIN STATE FIRST ---
+  const today = getESTDateString();
+  let winState = getWinState();
 
-  setupDatalist();
-  setupInputHandlers();
+  if (winState && winState.date !== today) {
+    clearWinState();
+    winState = null;
+  }
+
+  // --- CHECK FOR EXISTING WIN ---
+  if (
+    winState &&
+    winState.won &&
+    winState.date === today &&
+    winState.answerId === answer.id
+  ) {
+    showWinScreen();
+  }
+
+  // --- YESTERDAY DISPLAY LOGIC ---
+  const yesterday = getYesterdaysAnswer(characters);
+  console.log("Yesterday's answer:", yesterday?.name);
+
+  // --- ONLY ENABLE INPUT IF NOT WON ---
+  if (!winState) {
+    setupDatalist();
+    setupInputHandlers();
+  }
 }
+
+
 
 
 
@@ -316,6 +342,25 @@ async function initGame() {
 // ----------------------------
 // GUESSING
 // ----------------------------
+
+function getYesterdaysAnswer(characters) {
+  const est = new Date(
+    new Date().toLocaleString("en-US", { timeZone: "America/New_York" })
+  );
+
+  est.setDate(est.getDate() - 1);
+
+  const year = est.getFullYear();
+  const month = est.getMonth();
+  const day = est.getDate() - 1;
+
+  const seed = year * 100 + month;
+  const shuffled = shuffleWithSeed(characters, seed);
+
+  return shuffled[(day + shuffled.length) % shuffled.length];
+}
+
+
 
 function submitGuess() {
   const input = document.getElementById("guessInput");
@@ -342,10 +387,11 @@ function submitGuess() {
   input.value = "";
 
   if (guessed.id === answer.id) {
-  showWinScreen();
+    setWinState(answer.id);
+    showWinScreen();
+  }
 }
 
-}
 
 // ----------------------------
 // RENDERING
@@ -417,6 +463,27 @@ cell.className = "cell " + result.class;
 // ----------------------------
 // HELPERS
 // ----------------------------
+
+function getWinState() {
+  const raw = localStorage.getItem("homestuckle_win");
+  return raw ? JSON.parse(raw) : null;
+}
+
+function setWinState(answerId) {
+  localStorage.setItem(
+    "homestuckle_win",
+    JSON.stringify({
+      date: getESTDateString(),
+      won: true,
+      answerId
+    })
+  );
+}
+
+function clearWinState() {
+  localStorage.removeItem("homestuckle_win");
+}
+
 
 function makeCell(text, cls) {
   const cell = document.createElement("div");
