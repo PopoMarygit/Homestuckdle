@@ -2,20 +2,6 @@
 // PLACEHOLDER CHARACTER DATA
 // ----------------------------
 
-function getStoredDailyAnswer() {
-  return JSON.parse(localStorage.getItem("dailyAnswer") || "null");
-}
-
-function setStoredDailyAnswer(id) {
-  localStorage.setItem(
-    "dailyAnswer",
-    JSON.stringify({
-      date: getESTDateString(),
-      id
-    })
-  );
-}
-
 
 let characters = [];
 let answer = null;
@@ -43,42 +29,35 @@ function getESTDateString(date = new Date()) {
   return est.toISOString().slice(0, 10); // YYYY-MM-DD
 }
 
-const NO_REPEAT_DAYS = 30;
-
-function getRecentAnswers() {
-  return JSON.parse(localStorage.getItem("recentAnswers") || "[]");
+function seededRandom(seed) {
+  let x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
 }
 
-function saveAnswer(id) {
-  const today = getESTDateString();
-  let recent = getRecentAnswers();
+function shuffleWithSeed(array, seed) {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(seededRandom(seed + i) * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 
-  recent.push({ id, date: today });
-
-  recent = recent.filter(
-    r => (new Date(today) - new Date(r.date)) / 86400000 < NO_REPEAT_DAYS
+function getMonthlyAnswer(characters) {
+  const est = new Date(
+    new Date().toLocaleString("en-US", { timeZone: "America/New_York" })
   );
 
-  localStorage.setItem("recentAnswers", JSON.stringify(recent));
+  const year = est.getFullYear();
+  const month = est.getMonth(); // 0–11
+  const day = est.getDate() - 1;
+
+  const seed = year * 100 + month;
+  const shuffled = shuffleWithSeed(characters, seed);
+
+  return shuffled[day % shuffled.length];
 }
 
-function pickDailyAnswer() {
-  const today = getESTDateString();
-  const recentIds = getRecentAnswers().map(r => r.id);
-
-  let pool = characters.filter(c => !recentIds.includes(c.id));
-
-  // 🔒 SAFETY: if pool is empty, reset history
-  if (pool.length === 0) {
-    localStorage.removeItem("recentAnswers");
-    pool = [...characters];
-  }
-
-  const seed = today.split("-").reduce((a, b) => a + Number(b), 0);
-  const index = seed % pool.length;
-
-  return pool[index];
-}
 
 function getYesterdaysCharacter() {
   const recent = getRecentAnswers();
