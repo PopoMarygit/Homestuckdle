@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "John Egbert",
+    "gender": "Male",
     "species": "Human",
     "blood": "Red",
     "class": "Heir",
@@ -15,6 +16,7 @@
   {
     "id": 2,
     "name": "Rose Lalonde",
+    "gender": "Female",
     "species": "Human",
     "blood": "Red",
     "class": "Seer",
@@ -28,6 +30,7 @@
   {
     "id": 3,
     "name": "Dave Strider",
+    "gender": "Male",
     "species": "Human",
     "blood": "Red",
     "class": "Knight",
@@ -41,6 +44,7 @@
   {
     "id": 4,
     "name": "Jade Harley",
+    "gender": "Female",
     "species": "Human",
     "blood": "Red",
     "class": "Witch",
@@ -52,8 +56,9 @@
     "introduced": "Homestuck Act 1"
   },
   {
-      "id": 5,
+    "id": 5,
     "name": "Karkat Vantas",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Red",
     "class": "Knight",
@@ -65,8 +70,9 @@
     "introduced": "Homestuck Intermission"
   },
   {
-      "id": 6,
+    "id": 6,
     "name": "Aradia Megido",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Burgundy",
     "class": "Maid",
@@ -78,8 +84,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 7,
+    "id": 7,
     "name": "Tavros Nitram",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Bronze",
     "class": "Page",
@@ -91,8 +98,9 @@
     "introduced": "Homestuck Act 4"
   },
   {
-      "id": 8,
+    "id": 8,
     "name": "Sollux Captor",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Gold",
     "class": "Mage",
@@ -104,8 +112,9 @@
     "introduced": "Homestuck Act 4"
   },
   {
-      "id": 9,
+    "id": 9,
     "name": "Nepeta Leijon",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Olive",
     "class": "Rogue",
@@ -117,8 +126,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 10,
+    "id": 10,
     "name": "Kanaya Maryam",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Jade",
     "class": "Sylph",
@@ -130,8 +140,9 @@
     "introduced": "Homestuck Act 4"
   },
   {
-      "id": 11,
+    "id": 11,
     "name": "Terezi Pyrope",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Teal",
     "class": "Seer",
@@ -143,8 +154,9 @@
     "introduced": "Homestuck Act 4"
   },
   {
-      "id": 12,
+    "id": 12,
     "name": "Vriska Serket",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Cerulean",
     "class": "Thief",
@@ -156,8 +168,9 @@
     "introduced": "Homestuck Act 4"
   },
   {
-      "id": 13,
+    "id": 13,
     "name": "Equius Zahhak",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Indigo",
     "class": "Heir",
@@ -169,8 +182,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 14,
+    "id": 14,
     "name": "Gamzee Makara",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Purple",
     "class": "Bard",
@@ -182,8 +196,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 15,
+    "id": 15,
     "name": "Eridan Ampora",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Violet",
     "class": "Prince",
@@ -195,8 +210,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 16,
+    "id": 16,
     "name": "Feferi Peixes",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Fuschia",
     "class": "Witch",
@@ -208,8 +224,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 17,
+    "id": 17,
     "name": "Kankri Vantas",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Red",
     "class": "Seer",
@@ -221,8 +238,9 @@
     "introduced": "Homestuck Act 6"
   },
   {
-      "id": 18,
+    "id": 18,
     "name": "Damara Megido",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Burgundy",
     "class": "Witch",
@@ -234,8 +252,9 @@
     "introduced": "Homestuck Act 6"
   },
   {
-      "id": 19,
+    "id": 19,
     "name": "Rufioh Nitram",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Bronze",
     "class": "Rogue",
@@ -247,8 +266,9 @@
     "introduced": "Homestuck Act 6"
   },
   {
-      "id": 20,
+    "id": 20,
     "name": "Mituna Captor",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Gold",
     "class": "Heir",
@@ -260,8 +280,9 @@
     "introduced": "Homestuck Act 6"
   },
   {
-      "id": 21,
+    "id": 21,
     "name": "Meulin Leijon",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Olive",
     "class": "Mage",
@@ -273,8 +294,9 @@
     "introduced": "Homestuck Act 6"
   },
   {
-      "id": 22,
+    "id": 22,
     "name": "Porrim Maryam",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Jade",
     "class": "Maid",
@@ -286,8 +308,9 @@
     "introduced": "Homestuck Act 6"
   },
   {
-      "id": 23,
+    "id": 23,
     "name": "Latula Pyrope",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Teal",
     "class": "Knight",
@@ -299,8 +322,9 @@
     "introduced": "Homestuck Act 6"
   },
   {
-      "id": 24,
+    "id": 24,
     "name": "Aranea Serket",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Cerulean",
     "class": "Sylph",
@@ -312,8 +336,9 @@
     "introduced": "Homestuck Act 6"
   },
   {
-      "id": 25,
+    "id": 25,
     "name": "Horuss Zahhak",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Indigo",
     "class": "Page",
@@ -325,8 +350,9 @@
     "introduced": "Homestuck Act 6"
   },
   {
-      "id": 26,
+    "id": 26,
     "name": "Kurloz Makara",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Purple",
     "class": "Prince",
@@ -338,8 +364,9 @@
     "introduced": "Homestuck Act 6"
   },
   {
-      "id": 27,
+    "id": 27,
     "name": "Cronus Ampora",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Violet",
     "class": "Bard",
@@ -351,8 +378,9 @@
     "introduced": "Homestuck Act 6"
   },
   {
-      "id": 28,
+    "id": 28,
     "name": "Meenah Peixes",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Fuschia",
     "class": "Thief",
@@ -366,6 +394,7 @@
   {
     "id": 29,
     "name": "Jane Crocker",
+    "gender": "Female",
     "species": "Human",
     "blood": "Red",
     "class": "Maid",
@@ -379,6 +408,7 @@
   {
     "id": 30,
     "name": "Roxy Lalonde",
+    "gender": "Female",
     "species": "Human",
     "blood": "Red",
     "class": "Rogue",
@@ -392,6 +422,7 @@
   {
     "id": 31,
     "name": "Dirk Strider",
+    "gender": "Male",
     "species": "Human",
     "blood": "Red",
     "class": "Prince",
@@ -405,6 +436,7 @@
   {
     "id": 32,
     "name": "Jake English",
+    "gender": "Male",
     "species": "Human",
     "blood": "Red",
     "class": "Page",
@@ -418,6 +450,7 @@
   {
     "id": 33,
     "name": "Jane Egbert",
+    "gender": "Female",
     "species": "Sprite",
     "blood": "Yellow",
     "class": "Maid",
@@ -431,6 +464,7 @@
   {
     "id": 34,
     "name": "Rose's Mom",
+    "gender": "Female",
     "species": "Human",
     "blood": "Red",
     "class": "Rogue",
@@ -444,6 +478,7 @@
   {
     "id": 35,
     "name": "Dave's Bro",
+    "gender": "Male",
     "species": "Human",
     "blood": "Red",
     "class": "Prince",
@@ -457,6 +492,7 @@
   {
     "id": 36,
     "name": "Jake Harley",
+    "gender": "Male",
     "species": "Human",
     "blood": "Red",
     "class": "Page",
@@ -470,6 +506,7 @@
   {
     "id": 37,
     "name": "John's Dad",
+    "gender": "Male",
     "species": "Human",
     "blood": "Red",
     "class": "N/A",
@@ -483,6 +520,7 @@
   {
     "id": 38,
     "name": "Jane's Dad",
+    "gender": "Male",
     "species": "Human",
     "blood": "Red",
     "class": "N/A",
@@ -496,6 +534,7 @@
   {
     "id": 39,
     "name": "John Crocker",
+    "gender": "Male",
     "species": "Human",
     "blood": "Red",
     "class": "Heir",
@@ -509,6 +548,7 @@
   {
     "id": 40,
     "name": "Roxy's Mom",
+    "gender": "Female",
     "species": "Human",
     "blood": "Red",
     "class": "Seer",
@@ -522,6 +562,7 @@
   {
     "id": 41,
     "name": "Dirk's Bro",
+    "gender": "Male",
     "species": "Human",
     "blood": "Red",
     "class": "Knight",
@@ -535,6 +576,7 @@
   {
     "id": 42,
     "name": "Jade English",
+    "gender": "Female",
     "species": "Human",
     "blood": "Red",
     "class": "Witch",
@@ -546,8 +588,9 @@
     "introduced": "Homestuck Act 6"
   },
   {
-      "id": 43,
+    "id": 43,
     "name": "The Signless",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Red",
     "class": "Seer",
@@ -559,8 +602,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 44,
+    "id": 44,
     "name": "The Handmaid",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Burgundy",
     "class": "Maid",
@@ -572,8 +616,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 45,
+    "id": 45,
     "name": "The Summoner",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Bronze",
     "class": "Rogue",
@@ -585,8 +630,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 46,
+    "id": 46,
     "name": "The Ψiioniic",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Gold",
     "class": "Heir",
@@ -598,8 +644,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 47,
+    "id": 47,
     "name": "The Disciple",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Olive",
     "class": "Mage",
@@ -611,8 +658,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 48,
+    "id": 48,
     "name": "The Dolorosa",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Jade",
     "class": "Maid",
@@ -624,8 +672,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 49,
+    "id": 49,
     "name": "Neophyte Redglare",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Teal",
     "class": "Knight",
@@ -637,8 +686,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 50,
+    "id": 50,
     "name": "Marquise Spinneret Mindfang",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Cerulean",
     "class": "Sylph",
@@ -650,8 +700,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 51,
+    "id": 51,
     "name": "Darkleer",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Indigo",
     "class": "Page",
@@ -663,8 +714,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 52,
+    "id": 52,
     "name": "The Grand Highblood",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Purple",
     "class": "Prince",
@@ -676,8 +728,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 53,
+    "id": 53,
     "name": "Orphaner Dualscar",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Violet",
     "class": "Bard",
@@ -689,8 +742,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 54,
+    "id": 54,
     "name": "Her Imperious Condescension",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Fuschia",
     "class": "Thief",
@@ -702,8 +756,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 55,
+    "id": 55,
     "name": "Bec Noir",
+    "gender": "Male",
     "species": "Dersite",
     "blood": "Red",
     "class": "N/A",
@@ -715,8 +770,9 @@
     "introduced": "Homestuck Act 3"
   },
   {
-      "id": 56,
+    "id": 56,
     "name": "Wayward Vagabond",
+    "gender": "Male",
     "species": "Dersite",
     "blood": "Red",
     "class": "N/A",
@@ -728,8 +784,9 @@
     "introduced": "Homestuck Act 1"
   },
   {
-      "id": 57,
+    "id": 57,
     "name": "Perigrine Mendicant",
+    "gender": "Female",
     "species": "Prospitian",
     "blood": "Red",
     "class": "N/A",
@@ -741,8 +798,9 @@
     "introduced": "Homestuck Act 2"
   },
   {
-      "id": 58,
+    "id": 58,
     "name": "Aimless Renegade",
+    "gender": "Male",
     "species": "Dersite",
     "blood": "Red",
     "class": "N/A",
@@ -754,8 +812,9 @@
     "introduced": "Homestuck Act 3"
   },
   {
-      "id": 59,
+    "id": 59,
     "name": "Windswept Questant",
+    "gender": "Female",
     "species": "Prospitian",
     "blood": "Red",
     "class": "N/A",
@@ -767,8 +826,9 @@
     "introduced": "Homestuck Act 4"
   },
   {
-      "id": 60,
+    "id": 60,
     "name": "Spades Slick",
+    "gender": "Male",
     "species": "Dersite",
     "blood": "Red",
     "class": "N/A",
@@ -780,8 +840,9 @@
     "introduced": "Homestuck Act 3"
   },
   {
-      "id": 61,
+    "id": 61,
     "name": "Diamonds Droog",
+    "gender": "Male",
     "species": "Dersite",
     "blood": "Red",
     "class": "N/A",
@@ -793,8 +854,9 @@
     "introduced": "Homestuck Act 3"
   },
   {
-      "id": 62,
+    "id": 62,
     "name": "Hearts Boxcars",
+    "gender": "Male",
     "species": "Dersite",
     "blood": "Red",
     "class": "N/A",
@@ -806,8 +868,9 @@
     "introduced": "Homestuck Act 3"
   },
   {
-      "id": 63,
+    "id": 63,
     "name": "Clubs Deuce",
+    "gender": "Male",
     "species": "Dersite",
     "blood": "Red",
     "class": "N/A",
@@ -819,8 +882,9 @@
     "introduced": "Homestuck Act 3"
   },
   {
-      "id": 64,
+    "id": 64,
     "name": "Snowman",
+    "gender": "Female",
     "species": "Dersite",
     "blood": "Red",
     "class": "N/A",
@@ -832,8 +896,9 @@
     "introduced": "Homestuck Intermission"
   },
   {
-      "id": 64,
+    "id": 64,
     "name": "Doc Scratch",
+    "gender": "Male",
     "species": "First Guardian",
     "blood": "N/A",
     "class": "N/A",
@@ -845,8 +910,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 64,
+    "id": 64,
     "name": "Becquerel",
+    "gender": "Male",
     "species": "First Guardian",
     "blood": "N/A",
     "class": "N/A",
@@ -858,8 +924,9 @@
     "introduced": "Homestuck Act 3"
   },
   {
-      "id": 65,
+    "id": 65,
     "name": "Itchy",
+    "gender": "Male",
     "species": "Leprechaun",
     "blood": "Red",
     "class": "N/A",
@@ -871,8 +938,9 @@
     "introduced": "Homestuck Act 3"
   },
   {
-      "id": 66,
+    "id": 66,
     "name": "Doze",
+    "gender": "Male",
     "species": "Leprechaun",
     "blood": "Red",
     "class": "N/A",
@@ -884,8 +952,9 @@
     "introduced": "Homestuck Act 3"
   },
   {
-      "id": 67,
+    "id": 67,
     "name": "Trace",
+    "gender": "Male",
     "species": "Leprechaun",
     "blood": "Red",
     "class": "N/A",
@@ -897,8 +966,9 @@
     "introduced": "Homestuck Act 3"
   },
   {
-      "id": 68,
+    "id": 68,
     "name": "Clover",
+    "gender": "Male",
     "species": "Leprechaun",
     "blood": "Red",
     "class": "N/A",
@@ -910,8 +980,9 @@
     "introduced": "Homestuck Act 3"
   },
   {
-      "id": 69,
+    "id": 69,
     "name": "Fin",
+    "gender": "Male",
     "species": "Leprechaun",
     "blood": "Red",
     "class": "N/A",
@@ -923,8 +994,9 @@
     "introduced": "Homestuck Intermission"
   },
   {
-      "id": 70,
+    "id": 70,
     "name": "Die",
+    "gender": "Male",
     "species": "Leprechaun",
     "blood": "Red",
     "class": "N/A",
@@ -936,8 +1008,9 @@
     "introduced": "Homestuck Intermission"
   },
   {
-      "id": 71,
+    "id": 71,
     "name": "Crowbar",
+    "gender": "Male",
     "species": "Leprechaun",
     "blood": "Red",
     "class": "N/A",
@@ -949,8 +1022,9 @@
     "introduced": "Homestuck Act 3"
   },
   {
-      "id": 72,
+    "id": 72,
     "name": "Stitch",
+    "gender": "Male",
     "species": "Leprechaun",
     "blood": "Red",
     "class": "N/A",
@@ -962,8 +1036,9 @@
     "introduced": "Homestuck Intermission"
   },
   {
-      "id": 73,
+    "id": 73,
     "name": "Sawbuck",
+    "gender": "Male",
     "species": "Leprechaun",
     "blood": "Red",
     "class": "N/A",
@@ -975,8 +1050,9 @@
     "introduced": "Homestuck Intermission"
   },
   {
-      "id": 74,
+    "id": 74,
     "name": "Matchsticks",
+    "gender": "Male",
     "species": "Leprechaun",
     "blood": "Red",
     "class": "N/A",
@@ -988,8 +1064,9 @@
     "introduced": "Homestuck Intermission"
   },
   {
-      "id": 75,
+    "id": 75,
     "name": "Eggs",
+    "gender": "Male",
     "species": "Leprechaun",
     "blood": "Red",
     "class": "N/A",
@@ -1001,8 +1078,9 @@
     "introduced": "Homestuck Intermission"
   },
   {
-      "id": 76,
+    "id": 76,
     "name": "Biscuits",
+    "gender": "Male",
     "species": "Leprechaun",
     "blood": "Red",
     "class": "N/A",
@@ -1014,8 +1092,9 @@
     "introduced": "Homestuck Act 3"
   },
   {
-      "id": 77,
+    "id": 77,
     "name": "Quarters",
+    "gender": "Male",
     "species": "Leprechaun",
     "blood": "Red",
     "class": "N/A",
@@ -1027,8 +1106,9 @@
     "introduced": "Homestuck Intermission"
   },
   {
-      "id": 78,
+    "id": 78,
     "name": "Cans",
+    "gender": "Male",
     "species": "Leprechaun",
     "blood": "Red",
     "class": "N/A",
@@ -1040,8 +1120,9 @@
     "introduced": "Homestuck Act 3"
   },
   {
-      "id": 79,
+    "id": 79,
     "name": "Lord English",
+    "gender": "Male",
     "species": "Cherub",
     "blood": "Red",
     "class": "Lord",
@@ -1053,8 +1134,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 80,
+    "id": 80,
     "name": "Caliborn",
+    "gender": "Male",
     "species": "Cherub",
     "blood": "Red",
     "class": "Lord",
@@ -1066,8 +1148,9 @@
     "introduced": "Homestuck Act 6"
   },
   {
-      "id": 81,
+    "id": 81,
     "name": "Calliope",
+    "gender": "Female",
     "species": "Cherub",
     "blood": "Bright Lime",
     "class": "Muse",
@@ -1079,8 +1162,9 @@
     "introduced": "Homestuck Act 6"
   },
   {
-      "id": 82,
+    "id": 82,
     "name": "The MSPA Reader",
+    "gender": "Nonbinary",
     "species": "Human",
     "blood": "Red",
     "class": "N/A",
@@ -1092,8 +1176,9 @@
     "introduced": "Homestuck Act 5"
   },
   {
-      "id": 83,
+    "id": 83,
     "name": "David Brinner (?)",
+    "gender": "Male",
     "species": "Human",
     "blood": "Red",
     "class": "Gent",
@@ -1105,8 +1190,9 @@
     "introduced": "Homestuck Act 2"
   },
   {
-      "id": 84,
+    "id": 84,
     "name": "Casey",
+    "gender": "Male",
     "species": "Salamander",
     "blood": "Red",
     "class": "N/A",
@@ -1118,8 +1204,9 @@
     "introduced": "Homestuck Act 4"
   },
   {
-      "id": 85,
+    "id": 85,
     "name": "Jude Harley",
+    "gender": "Male",
     "species": "Human",
     "blood": "Red",
     "class": "N/A",
@@ -1131,8 +1218,9 @@
     "introduced": "Hiveswap Act 1"
   },
   {
-      "id": 86,
+    "id": 86,
     "name": "Sweet Bro",
+    "gender": "Male",
     "species": "Human",
     "blood": "Red",
     "class": "Page",
@@ -1144,8 +1232,9 @@
     "introduced": "Homestuck Act 2"
   },
   {
-      "id": 87,
+    "id": 87,
     "name": "Hella Jeff",
+    "gender": "Male",
     "species": "Human",
     "blood": "Red",
     "class": "Bard",
@@ -1157,8 +1246,9 @@
     "introduced": "Homestuck Act 2"
   },
   {
-      "id": 88,
+    "id": 88,
     "name": "Joey Claire",
+    "gender": "Female",
     "species": "Human",
     "blood": "Red",
     "class": "N/A",
@@ -1170,8 +1260,9 @@
     "introduced": "Hiveswap Act 1"
   },
   {
-      "id": 89,
+    "id": 89,
     "name": "Xefros Tritoh",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Burgundy",
     "class": "N/A",
@@ -1183,8 +1274,9 @@
     "introduced": "Hiveswap Act 1"
   },
   {
-      "id": 90,
+    "id": 90,
     "name": "Tetrarch Dammek",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Bronze",
     "class": "N/A",
@@ -1196,8 +1288,9 @@
     "introduced": "Hiveswap Act 1"
   },
   {
-      "id": 91,
+    "id": 91,
     "name": "Cridea Jeevik",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Violet",
     "class": "N/A",
@@ -1209,8 +1302,9 @@
     "introduced": "Hiveswap Act 2"
   },
   {
-      "id": 92,
+    "id": 92,
     "name": "Ardata Carmia",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Cerulean",
     "class": "N/A",
@@ -1222,8 +1316,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 93,
+    "id": 93,
     "name": "Diemen Xicali",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Burgundy",
     "class": "N/A",
@@ -1235,8 +1330,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 94,
+    "id": 94,
     "name": "Amisia Erdehn",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Indigo",
     "class": "N/A",
@@ -1248,8 +1344,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 95,
+    "id": 95,
     "name": "Cirava Hermod",
+    "gender": "Nonbinary",
     "species": "Troll",
     "blood": "Gold",
     "class": "N/A",
@@ -1261,8 +1358,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 96,
+    "id": 96,
     "name": "Skylla Koriga",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Bronze",
     "class": "Knight",
@@ -1274,8 +1372,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 97,
+    "id": 97,
     "name": "Bronya Ursama",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Jade",
     "class": "N/A",
@@ -1287,8 +1386,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 98,
+    "id": 98,
     "name": "Tagora Gorjek",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Teal",
     "class": "N/A",
@@ -1300,8 +1400,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 99,
+    "id": 99,
     "name": "Vikare Ratite",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Bronze",
     "class": "N/A",
@@ -1313,8 +1414,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 100,
+    "id": 100,
     "name": "Polypa Goezee",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Olive",
     "class": "N/A",
@@ -1326,8 +1428,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 101,
+    "id": 101,
     "name": "Zebruh Codakk",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Indigo",
     "class": "N/A",
@@ -1339,8 +1442,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 102,
+    "id": 102,
     "name": "Gaegrl Elwurd",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Cerulean",
     "class": "N/A",
@@ -1352,8 +1456,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 103,
+    "id": 103,
     "name": "Kuprum Maxlol",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Gold",
     "class": "N/A",
@@ -1365,8 +1470,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 104,
+    "id": 104,
     "name": "Folykl Darane",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Gold",
     "class": "N/A",
@@ -1378,8 +1484,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 105,
+    "id": 105,
     "name": "Remele Namaaq",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Cerulean",
     "class": "N/A",
@@ -1391,8 +1498,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 106,
+    "id": 106,
     "name": "Konyyl Okimaw",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Olive",
     "class": "N/A",
@@ -1404,8 +1512,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 107,
+    "id": 107,
     "name": "Tyzias Entykk",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Teal",
     "class": "N/A",
@@ -1417,8 +1526,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 108,
+    "id": 108,
     "name": "Chixie Roixmr",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Bronze",
     "class": "N/A",
@@ -1430,8 +1540,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 109,
+    "id": 109,
     "name": "Trizza Tethis",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Fuschia",
     "class": "N/A",
@@ -1443,8 +1554,9 @@
     "introduced": "Hiveswap Act 1"
   },
   {
-      "id": 110,
+    "id": 110,
     "name": "Azdaja Knelax",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Gold",
     "class": "Prince",
@@ -1456,8 +1568,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 111,
+    "id": 111,
     "name": "Chahut Maenad",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Purple",
     "class": "N/A",
@@ -1469,8 +1582,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 112,
+    "id": 112,
     "name": "Zebede Tongva",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Gold",
     "class": "N/A",
@@ -1482,8 +1596,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 113,
+    "id": 113,
     "name": "Tegiri Kalbur",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Teal",
     "class": "N/A",
@@ -1495,8 +1610,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 114,
+    "id": 114,
     "name": "Mallek Adalov",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Cerulean",
     "class": "N/A",
@@ -1508,8 +1624,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 115,
+    "id": 115,
     "name": "Lynera Skalbi",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Jade",
     "class": "N/A",
@@ -1521,8 +1638,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 116,
+    "id": 116,
     "name": "Galekh Xigisi",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Indigo",
     "class": "N/A",
@@ -1534,8 +1652,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 117,
+    "id": 117,
     "name": "Tirona Kasund",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Teal",
     "class": "N/A",
@@ -1547,8 +1666,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 118,
+    "id": 118,
     "name": "Boldir Lamati",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Olive",
     "class": "N/A",
@@ -1560,8 +1680,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 119,
+    "id": 119,
     "name": "Stelsa Sezyat",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Teal",
     "class": "N/A",
@@ -1573,8 +1694,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 120,
+    "id": 120,
     "name": "Marsti Houtek",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Burgundy",
     "class": "N/A",
@@ -1586,8 +1708,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 121,
+    "id": 121,
     "name": "Karako Pierot",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Purple",
     "class": "N/A",
@@ -1599,8 +1722,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 122,
+    "id": 122,
     "name": "Charun Krojib",
+    "gender": "Nonbinary",
     "species": "Troll",
     "blood": "Olive",
     "class": "N/A",
@@ -1612,8 +1736,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 123,
+    "id": 123,
     "name": "Wanshi Adyata",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Jade",
     "class": "N/A",
@@ -1625,8 +1750,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 124,
+    "id": 124,
     "name": "Fozzer Velyes",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Burgundy",
     "class": "N/A",
@@ -1638,8 +1764,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 125,
+    "id": 125,
     "name": "Marvus Xoloto",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Purple",
     "class": "N/A",
@@ -1651,8 +1778,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 126,
+    "id": 126,
     "name": "Daraya Jonjet",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Jade",
     "class": "N/A",
@@ -1664,8 +1792,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 127,
+    "id": 127,
     "name": "Nihkee Moolah",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Indigo",
     "class": "N/A",
@@ -1677,8 +1806,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 128,
+    "id": 128,
     "name": "Lanque Bombyx",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Jade",
     "class": "N/A",
@@ -1690,8 +1820,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 129,
+    "id": 129,
     "name": "Barzum Soleil",
+    "gender": "Female",
     "species": "Troll",
     "blood": "Purple",
     "class": "N/A",
@@ -1703,8 +1834,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 130,
+    "id": 130,
     "name": "Baizli Soleil",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Purple",
     "class": "N/A",
@@ -1716,8 +1848,9 @@
     "introduced": "Hiveswap Friendsim"
   },
   {
-      "id": 131,
+    "id": 131,
     "name": "Jerann Mussel",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Violet",
     "class": "Seer",
@@ -1729,8 +1862,9 @@
     "introduced": "Hiveswap Act 3"
   },
   {
-      "id": 132,
+    "id": 132,
     "name": "Kalian Delfin",
+    "gender": "Male",
     "species": "Troll",
     "blood": "Violet",
     "class": "Bard",
