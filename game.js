@@ -319,20 +319,6 @@ async function initGame() {
 }
 
 
-  // --- ONLY ENABLE INPUT IF NOT WON ---
-const hasValidWin =
-  winState &&
-  winState.won &&
-  winState.date === today &&
-  winState.answerId === answer.id;
-
-if (hasValidWin) {
-  showWinScreen();
-} else {
-  setupDatalist();
-  setupInputHandlers();
-}
-
 
 
 
