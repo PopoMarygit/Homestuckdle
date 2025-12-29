@@ -292,18 +292,20 @@ const traits = [
 async function initGame() {
   await loadCharacters();
 
-  const today = getESTDateString();
-  const stored = getStoredDailyAnswer();
+async function initGame() {
+  await loadCharacters();
 
-  if (stored && stored.date === today) {
-    // Reuse today's answer
-    answer = characters.find(c => c.id === stored.id);
-  } else {
-    // Pick a new one for today
-    answer = pickDailyAnswer();
-    setStoredDailyAnswer(answer.id);
-    saveAnswer(answer.id);
+  answer = getMonthlyAnswer(characters);
+
+  if (!answer) {
+    console.error("No daily answer could be selected.");
+    return;
   }
+
+  setupDatalist();
+  setupInputHandlers();
+}
+
   
 if (!answer) {
   console.error("No daily answer could be selected.");
