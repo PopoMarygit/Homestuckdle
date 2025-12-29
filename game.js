@@ -292,41 +292,47 @@ async function initGame() {
   }
 
   answer = getMonthlyAnswer(characters);
-
   if (!answer) {
     console.error("No daily answer could be selected.");
     return;
   }
 
-  // --- CLEAR STALE WIN STATE FIRST ---
   const today = getESTDateString();
   let winState = getWinState();
 
-  if (winState && winState.date !== today) {
-    clearWinState();
-    winState = null;
-  }
-
-  // --- CHECK FOR EXISTING WIN ---
-  if (
+  const hasValidWin =
     winState &&
     winState.won &&
     winState.date === today &&
-    winState.answerId === answer.id
-  ) {
+    winState.answerId === answer.id;
+
+  if (hasValidWin) {
     showWinScreen();
-  }
-
-  // --- YESTERDAY DISPLAY LOGIC ---
-  const yesterday = getYesterdaysAnswer(characters);
-  console.log("Yesterday's answer:", yesterday?.name);
-
-  // --- ONLY ENABLE INPUT IF NOT WON ---
-  if (!winState) {
+  } else {
+    clearWinState(); // nuke stale wins
     setupDatalist();
     setupInputHandlers();
   }
+
+  const yesterday = getYesterdaysAnswer(characters);
+  console.log("Yesterday's answer:", yesterday?.name);
 }
+
+
+  // --- ONLY ENABLE INPUT IF NOT WON ---
+const hasValidWin =
+  winState &&
+  winState.won &&
+  winState.date === today &&
+  winState.answerId === answer.id;
+
+if (hasValidWin) {
+  showWinScreen();
+} else {
+  setupDatalist();
+  setupInputHandlers();
+}
+
 
 
 
