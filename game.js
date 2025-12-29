@@ -268,8 +268,8 @@ function setupInputHandlers() {
 
 
 const traits = [
-  "species",
   "gender",
+  "species",
   "blood",
   "class",
   "aspect",
@@ -406,8 +406,8 @@ nameCell.className =
 
   // TRAITS
   const traits = [
-    "species",
     "gender",
+    "species",
     "blood",
     "class",
     "aspect",
