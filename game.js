@@ -59,12 +59,6 @@ function getMonthlyAnswer(characters) {
 }
 
 
-function getYesterdaysCharacter() {
-  const recent = getRecentAnswers();
-  return recent.length
-    ? characters.find(c => c.id === recent.at(-1).id)
-    : null;
-}
 
 
 const universeOrder = [
@@ -292,8 +286,10 @@ const traits = [
 async function initGame() {
   await loadCharacters();
 
-async function initGame() {
-  await loadCharacters();
+  if (!characters.length) {
+    console.error("Characters failed to load.");
+    return;
+  }
 
   answer = getMonthlyAnswer(characters);
 
@@ -302,20 +298,12 @@ async function initGame() {
     return;
   }
 
+  console.log("Daily answer:", answer.name);
+
   setupDatalist();
   setupInputHandlers();
 }
 
-  
-if (!answer) {
-  console.error("No daily answer could be selected.");
-  return;
-}
-
-  
-  setupDatalist();
-  setupInputHandlers();
-}
 
 
 
