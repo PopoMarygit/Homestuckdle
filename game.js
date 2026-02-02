@@ -296,6 +296,7 @@ async function initGame() {
     setupDatalist();
     setupInputHandlers();
   }
+}
 
   
 
