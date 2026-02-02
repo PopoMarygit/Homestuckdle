@@ -279,6 +279,7 @@ async function initGame() {
     return;
   }
 
+  answer = getDailyAnswer(characters);
 
   const today = getESTDateString();
   let winState = getWinState();
@@ -292,11 +293,12 @@ async function initGame() {
   if (hasValidWin) {
     showWinScreen();
   } else {
-    clearWinState(); // nuke stale wins
+    clearWinState();
     setupDatalist();
     setupInputHandlers();
   }
 }
+
 
   
 
