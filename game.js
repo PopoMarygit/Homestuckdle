@@ -43,20 +43,7 @@ function shuffleWithSeed(array, seed) {
   return arr;
 }
 
-function getMonthlyAnswer(characters) {
-  const est = new Date(
-    new Date().toLocaleString("en-US", { timeZone: "America/New_York" })
-  );
 
-  const year = est.getFullYear();
-  const month = est.getMonth(); // 0–11
-  const day = est.getDate() - 1;
-
-  const seed = year * 100 + month;
-  const shuffled = shuffleWithSeed(characters, seed);
-
-  return shuffled[day % shuffled.length];
-}
 
 
 
@@ -292,11 +279,6 @@ async function initGame() {
     return;
   }
 
-  answer = getMonthlyAnswer(characters);
-  if (!answer) {
-    console.error("No daily answer could be selected.");
-    return;
-  }
 
   const today = getESTDateString();
   let winState = getWinState();
@@ -315,9 +297,7 @@ async function initGame() {
     setupInputHandlers();
   }
 
-  const yesterday = getYesterdaysAnswer(characters);
-  console.log("Yesterday's answer:", yesterday?.name);
-}
+  
 
 
 
@@ -336,22 +316,23 @@ async function initGame() {
 // GUESSING
 // ----------------------------
 
-function getYesterdaysAnswer(characters) {
-  const est = new Date(
+function getDailyAnswer(characters) {
+  const startDate = new Date("2024-01-01"); // pick a fixed launch date
+
+  const now = new Date(
     new Date().toLocaleString("en-US", { timeZone: "America/New_York" })
   );
 
-  est.setDate(est.getDate() - 1);
+  const daysSinceStart = Math.floor(
+    (now - startDate) / 86400000
+  );
 
-  const year = est.getFullYear();
-  const month = est.getMonth();
-  const day = est.getDate() - 1;
+  // ONE global shuffle, forever
+  const shuffled = shuffleWithSeed(characters, 1337);
 
-  const seed = year * 100 + month;
-  const shuffled = shuffleWithSeed(characters, seed);
-
-  return shuffled[(day + shuffled.length) % shuffled.length];
+  return shuffled[daysSinceStart % shuffled.length];
 }
+
 
 
 
