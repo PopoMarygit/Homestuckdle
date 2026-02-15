@@ -22,12 +22,19 @@ async function loadCharacters() {
   characters = await res.json();
 }
 
-function getESTDateString(date = new Date()) {
-  const est = new Date(
-    date.toLocaleString("en-US", { timeZone: "America/New_York" })
-  );
-  return est.toISOString().slice(0, 10); // YYYY-MM-DD
+function getESTDateString() {
+  const now = new Date();
+
+  const formatter = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  });
+
+  return formatter.format(now); // YYYY-MM-DD already
 }
+
 
 function seededRandom(seed) {
   let x = Math.sin(seed) * 10000;
