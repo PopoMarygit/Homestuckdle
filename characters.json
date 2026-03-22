@@ -1874,5 +1874,33 @@
     "godTierStatus": "No",
     "aliveStatus": "Alive",
     "introduced": "Hiveswap Act 3"
+    },
+  {
+    "id": 133,
+    "name": "Cridea Jeevik",
+    "gender": "Female",
+    "species": "Troll",
+    "blood": "Violet",
+    "class": "Sylph",
+    "aspect": "Heart",
+    "pesterhandle": "CrideaJeevik",
+    "universe": "B2",
+    "godTierStatus": "No",
+    "aliveStatus": "Alive",
+    "introduced": "Hiveswap Act 1"
+  },
+  {
+    "id": 134,
+    "name": "Lonner Sailin",
+    "gender": "Male",
+    "species": "Troll",
+    "blood": "Burgundy",
+    "class": "N/A",
+    "aspect": "Doom",
+    "pesterhandle": "N/A",
+    "universe": "B2",
+    "godTierStatus": "No",
+    "aliveStatus": "Alive",
+    "introduced": "Hiveswap Act 3"
   }
 ]
